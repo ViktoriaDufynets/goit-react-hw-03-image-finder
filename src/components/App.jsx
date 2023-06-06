@@ -1,10 +1,10 @@
 import { Component } from 'react';
 import ImageGallery from './ImageGallery/ImageGallery';
 import { ToastContainer } from 'react-toastify';
-import { toast } from 'react-toastify';
+//import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import axios from 'axios';
-import  fetchImages from './service-api';
+//import axios from 'axios';
+//import  fetchImages from './service-api';
 import Modal from './Modal/Modal';
 import Searchbar from './Searchbar/Searchbar';
 import Button from './Button/Button';
@@ -41,7 +41,6 @@ class App extends Component {
 
 
     setTimeout(() => {
-
       fetch(URL).
       then(res => res.json()).
       then(({ hits, totalHits }) => {
