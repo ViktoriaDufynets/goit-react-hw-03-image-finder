@@ -27,7 +27,7 @@ class Modal extends Component {
     };
   
     render() {
-      const { title, onClose, currentImageUrl, currentImageDescription } =
+      const { currentImageUrl, currentImageDescription } =
         this.props;
   
       return createPortal(
