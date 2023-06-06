@@ -41,9 +41,7 @@ class App extends Component {
 
 
     setTimeout(() => {
-      fetch(URL).
-      then(res => res.json()).
-      then(({ hits, totalHits }) => {
+      fetch(URL).then(res => res.json()).then(({ hits, totalHits }) => {
         const imagesArray = hits.map(hit => ({
           id: hit.id,
           description: hit.tags,
@@ -70,9 +68,7 @@ class App extends Component {
 if (prevState.page !== this.state.page && this.state.page !== 1) {
   this.setState(({ isLoading }) => ({ isLoading: !isLoading }));
   setTimeout(() => {
-  fetch(URL).
-  then(res => res.json()).
-  then(({ hits }) => {
+  fetch(URL).then(res => res.json()).then(({ hits }) => {
       const imagesArray = hits.map(hit => ({
         id: hit.id,
         description: hit.tags,
@@ -86,9 +82,7 @@ if (prevState.page !== this.state.page && this.state.page !== 1) {
           imagesOnPage: imagesOnPage + imagesArray.length,
         };
       });
-    }).
-    catch(error => this.setState({ error })).
-    finally(() =>
+    }).catch(error => this.setState({ error })).finally(() =>
       this.setState(({ isLoading }) => ({ isLoading: !isLoading }))
     );
   }, 3000)
