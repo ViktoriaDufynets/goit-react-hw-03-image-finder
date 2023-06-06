@@ -56,9 +56,7 @@ class App extends Component {
           totalImages: totalHits,
         });
 
-      }).
-      catch(error => this.setState({ error })).
-      finally(() =>
+      }).catch(error => this.setState({ error })).finally(() =>
         this.setState(({ isLoading }) => ({ isLoading: !isLoading }))
       );
     }, 3000)
