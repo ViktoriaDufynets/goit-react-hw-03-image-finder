@@ -20,7 +20,6 @@ class Searchbar extends Component {
 
     const { onSubmit } = this.props;
     const { query } = this.state;
-    const { hits } = this.state;
 
     if (query.trim() === '') {
       return toast.info('Please enter a search term.');
