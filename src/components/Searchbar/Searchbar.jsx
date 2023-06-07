@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Component } from 'react';
 import { toast } from 'react-toastify';
 import { FaSearch } from 'react-icons/fa';
@@ -8,7 +9,6 @@ class Searchbar extends Component {
 
   state = {
     query: '',
-    hits: 0,
   };
 
   onChangeInput = e => {
@@ -25,10 +25,6 @@ class Searchbar extends Component {
     if (query.trim() === '') {
       return toast.info('Please enter a search term.');
 
-    }
-
-    if (query > 0 && hits.length === 0) {
-      return toast.error('nooo');     
     }
 
     onSubmit(query);
@@ -58,5 +54,10 @@ class Searchbar extends Component {
     );
   }
 }
+
+
+Searchbar.propTypes = { 
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default Searchbar;
